@@ -10,26 +10,29 @@ const options = {
 
 Mongoose.plugin(slug, options);
 
-// Brand Schema
-const BrandSchema = new Schema({
+const CommerceSchema = new Schema({
   name: {
     type: String,
     trim: true
   },
   slug: { type: String, slug: 'name', unique: true },
-  image: {
+  images: [{
     data: Buffer,
     contentType: String
-  },
+  }],
   description: {
     type: String,
     trim: true
   },
-  updated: Date,
-  created: {
-    type: Date,
-    default: Date.now
+  city: {
+    type: Schema.Types.ObjectId,
+    ref: "City"
+  }
+}, {
+  timestamps: {
+    createdAt: "created",
+    updatedAt: "updated",
   }
 });
 
-module.exports = Mongoose.model('Brand', BrandSchema);
+module.exports = Mongoose.model('Commerce', CommerceSchema);

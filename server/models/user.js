@@ -22,6 +22,10 @@ const UserSchema = new Schema({
     enum: ['ROLE_MEMBER', 'ROLE_ADMIN', 'ROLE_COLLABORATOR'],
     default: 'ROLE_ADMIN'
   },
+  city: {
+    type: Schema.Types.ObjectId,
+    ref: "City"
+  },
   resetPasswordToken: { type: String },
   resetPasswordExpires: { type: Date }
 });
