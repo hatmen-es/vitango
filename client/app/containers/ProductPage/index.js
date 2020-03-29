@@ -36,8 +36,7 @@ class ProductPage extends React.PureComponent {
       product,
       productFormData,
       productChange,
-      handleAddToCart,
-      handleRemoveFromCart
+      handleBuy,  //TODO: define this in actions
     } = this.props;
 
     return (
@@ -46,11 +45,6 @@ class ProductPage extends React.PureComponent {
           <Col xs="12" md="5" lg="5" className="mb-3">
             <div className="item-image">
               <img src={"/images/placeholder-image.png"} />
-              {product.quantity > 0 ? (
-                <p className="stock in-stock">In stock</p>
-              ) : (
-                <p className="stock out-of-stock">Out of stock</p>
-              )}
             </div>
           </Col>
           <Col xs="12" md="7" lg="7" className="mb-3">
@@ -77,7 +71,7 @@ class ProductPage extends React.PureComponent {
                   disabled={!product.quantity > 0}
                   className="input-btn"
                   type="submit"
-                  onClick={() => handleAddToCart(product)}
+                  onClick={() => handleBuy(product)}
                 >
                   Comprar
                 </button>

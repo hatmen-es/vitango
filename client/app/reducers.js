@@ -16,7 +16,6 @@ import loginReducer from './containers/Login/reducer';
 import forgotPasswordReducer from './containers/ForgotPassword/reducer';
 import navigationReducer from './containers/Navigation/reducer';
 import authenticationReducer from './containers/Authentication/reducer';
-import cartReducer from './containers/Cart/reducer';
 import newsletterReducer from './containers/Newsletter/reducer';
 import customerReducer from './containers/Customer/reducer';
 import adminReducer from './containers/Admin/reducer';
@@ -27,7 +26,6 @@ import productReducer from './containers/Product/reducer';
 import categoryReducer from './containers/Category/reducer';
 import brandReducer from './containers/Brand/reducer';
 import navigationMenuReducer from './containers/NavigationMenu/reducer';
-import shopReducer from './containers/Shop/reducer';
 import merchantReducer from './containers/Merchant/reducer';
 import contactReducer from './containers/Contact/reducer';
 
@@ -42,7 +40,6 @@ const createReducer = history =>
     forgotPassword: forgotPasswordReducer,
     navigation: navigationReducer,
     authentication: authenticationReducer,
-    cart: cartReducer,
     newsletter: newsletterReducer,
     customer: customerReducer,
     admin: adminReducer,
@@ -53,7 +50,6 @@ const createReducer = history =>
     category: categoryReducer,
     brand: brandReducer,
     menu: navigationMenuReducer,
-    shop: shopReducer,
     merchant: merchantReducer,
     contact: contactReducer
   });
