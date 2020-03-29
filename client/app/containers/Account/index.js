@@ -33,7 +33,7 @@ class Account extends React.PureComponent {
 
     return (
       <div className='account'>
-        <SubPage title={'Account Page'} isMenuOpen={null} />
+        <SubPage title={'Tu Cuenta'} isMenuOpen={null} />
         <div className='info'>
           <p>{user.email}</p>
           {user.role !== 'ROLE_MEMBER' && <span>Admin</span>}

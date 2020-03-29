@@ -37,7 +37,7 @@ class Product extends React.PureComponent {
     return (
       <div className='product'>
         <SubPage
-          title={isProductAddOpen ? 'Add Product' : 'Product List'}
+          title={isProductAddOpen ? 'Añadir producto' : 'Lista de Productos'}
           isMenuOpen={isProductAddOpen}
           toggleMenu={toggleAddProduct}
         >
