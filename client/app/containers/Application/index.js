@@ -21,12 +21,9 @@ import Dashboard from '../Dashboard';
 import Navigation from '../Navigation';
 import Authentication from '../Authentication';
 import Notification from '../Notification';
-import ForgotPassword from '../ForgotPassword';
-import ResetPassword from '../ResetPassword';
 import Shop from '../Shop';
 import BrandPage from '../BrandPage';
 import ProductPage from '../ProductPage';
-import Sell from '../Sell';
 import Contact from '../Contact';
 
 import Page404 from '../../components/Page404';
@@ -40,7 +37,6 @@ class Application extends React.PureComponent {
       this.props.fetchProfile(user);
     }
 
-    this.props.checkCart();
   }
 
   render() {
@@ -54,17 +50,11 @@ class Application extends React.PureComponent {
               <Switch>
                 <Route exact path='/' component={HomePage} />
                 <Route path='/shop' component={Shop} />
-                <Route path='/sell' component={Sell} />
                 <Route path='/contact' component={Contact} />
                 <Route path='/brands' component={BrandPage} />
                 <Route path='/product/:slug' component={ProductPage} />
                 <Route path='/login' component={LoginPage} />
                 <Route path='/register' component={SignupPage} />
-                <Route path='/forgot-password' component={ForgotPassword} />
-                <Route
-                  path='/reset-password/:token'
-                  component={ResetPassword}
-                />
                 <Route
                   path='/dashboard'
                   component={Authentication(Dashboard)}

@@ -28,15 +28,8 @@ const Table = props => {
     condensed,
     csv,
     search,
-    clickAction,
-    isRowEvents
   } = props;
 
-  const rowEvents = {
-    onClick: (e, row, rowIndex) => {
-      clickAction(row._id, rowIndex);
-    }
-  };
 
   return (
     <ToolkitProvider
@@ -50,7 +43,7 @@ const Table = props => {
         <div className='table-section'>
           {csv && (
             <div className='csv'>
-              <ExportCSVButton {...props.csvProps}>Export CSV</ExportCSVButton>
+              <ExportCSVButton {...props.csvProps}>Exportar fichero CSV</ExportCSVButton>
             </div>
           )}
           {search && (
@@ -67,7 +60,6 @@ const Table = props => {
             hover={hover}
             condensed={condensed}
             noDataIndication={indication}
-            // rowEvents={isRowEvents ? rowEvents : null}
           />
         </div>
       )}

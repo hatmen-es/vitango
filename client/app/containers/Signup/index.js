@@ -13,8 +13,6 @@ import { Redirect } from 'react-router-dom';
 import actions from '../../actions';
 import Input from '../../components/Input';
 import LoadingIndicator from '../../components/LoadingIndicator';
-import SignupProvider from '../../components/SignupProvider';
-import Checkbox from '../../components/Checkbox';
 
 class Signup extends React.PureComponent {
   render() {
@@ -22,10 +20,8 @@ class Signup extends React.PureComponent {
       authenticated,
       signupFormData,
       isLoading,
-      isSubscribed,
       signupChange,
       signUp,
-      subscribeChange
     } = this.props;
 
     if (authenticated) return <Redirect to='/dashboard' />;
@@ -38,16 +34,16 @@ class Signup extends React.PureComponent {
             <div className='popup-background' />
           </div>
         )}
-        <h1>SignUp</h1>
+        <h1>Nueva cuenta</h1>
         <hr />
         <Row>
           <Col xs='12' md='6' className='col-no-padding'>
             <Col xs='12' md='12'>
               <Input
                 type={'text'}
-                label={'Email Address'}
+                label={'Email'}
                 name={'email'}
-                placeholder={'Please Enter Your Email'}
+                placeholder={'Introduce tu correo electrónico'}
                 value={signupFormData.email}
                 onInputChange={(name, value) => {
                   signupChange(name, value);
@@ -57,9 +53,9 @@ class Signup extends React.PureComponent {
             <Col xs='12' md='12'>
               <Input
                 type={'text'}
-                label={'First Name'}
+                label={'Nombre'}
                 name={'firstName'}
-                placeholder={'Please Enter Your First Name'}
+                placeholder={'Introduce tu nombre'}
                 value={signupFormData.firstName}
                 onInputChange={(name, value) => {
                   signupChange(name, value);
@@ -69,9 +65,9 @@ class Signup extends React.PureComponent {
             <Col xs='12' md='12'>
               <Input
                 type={'text'}
-                label={'Last Name'}
+                label={'Apellidos'}
                 name={'lastName'}
-                placeholder={'Please Enter Your Last Name'}
+                placeholder={'Introduce apellidos'}
                 value={signupFormData.lastName}
                 onInputChange={(name, value) => {
                   signupChange(name, value);
@@ -81,9 +77,9 @@ class Signup extends React.PureComponent {
             <Col xs='12' md='12'>
               <Input
                 type={'password'}
-                label={'Password'}
+                label={'Contraseña'}
                 name={'password'}
-                placeholder={'Please Enter Your Password'}
+                placeholder={'Introduce contraseña'}
                 value={signupFormData.password}
                 onInputChange={(name, value) => {
                   signupChange(name, value);
@@ -91,20 +87,11 @@ class Signup extends React.PureComponent {
               />
             </Col>
           </Col>
-          <Col xs='12' md='6'>
-            <SignupProvider />
-          </Col>
         </Row>
         <hr />
-        <Checkbox
-          id={'subscribe'}
-          label={'Subscribe to newsletter'}
-          checked={isSubscribed}
-          toggleCheckboxChange={subscribeChange}
-        />
         <div className='login-actions'>
           <button className='input-btn' type='submit' onClick={() => signUp()}>
-            Sign Up
+            Registrar
           </button>
         </div>
       </div>

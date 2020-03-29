@@ -13,9 +13,7 @@ import Newsletter from '../../containers/Newsletter';
 
 const Footer = props => {
   const infoLinks = [
-    { id: 0, name: 'Contact Us', to: '/contact' },
-    { id: 1, name: 'Sell With Us', to: '/sell' },
-    { id: 2, name: 'Shipping', to: '/shipping' }
+    { id: 0, name: 'Contacta con nosotros', to: '/contact' },
   ];
 
   const footerBusinessLinks = (
@@ -43,15 +41,7 @@ const Footer = props => {
         <div className='footer-content'>
           <div className='footer-block'>
             <div className='block-title'>
-              <h2>Customer Service</h2>
-            </div>
-            <div className='block-content'>
-              <ul>{footerLinks}</ul>
-            </div>
-          </div>
-          <div className='footer-block'>
-            <div className='block-title'>
-              <h2>Links</h2>
+              <h2>Enlaces</h2>
             </div>
             <div className='block-content'>
               <ul>{footerLinks}</ul>
@@ -68,24 +58,6 @@ const Footer = props => {
         <div className='footer-copyright'>
           <span>© {new Date().getFullYear()} MERN Store</span>
         </div>
-        <ul className='footer-social-item'>
-          <li>
-            <span className='facebook-icon' />
-            <a href='/facebook.com/' rel='noreferrer' target='_blank' />
-          </li>
-          <li>
-            <span className='instagram-icon' />
-            <a href='/instagram.com/' rel='noreferrer' target='_blank' />
-          </li>
-          <li>
-            <span className='pinterest-icon' />
-            <a href='/pinterest.com/' rel='noreferrer' target='_blank' />
-          </li>
-          <li>
-            <span className='twitter-icon' />
-            <a href='/twitter.com/' rel='noreferrer' target='_blank' />
-          </li>
-        </ul>
       </Container>
     </footer>
   );

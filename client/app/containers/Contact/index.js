@@ -19,15 +19,15 @@ class Contact extends React.PureComponent {
 
     return (
       <div className='sell'>
-        <h1>Contact Us and we will reach you</h1>
+        <h1>Contacta con nosotros</h1>
         <hr />
         <Row>
           <Col xs='12' md='6'>
             <Input
               type={'text'}
-              label={'Name'}
+              label={'Nombre'}
               name={'name'}
-              placeholder={'You Full Name'}
+              placeholder={'Tu nombre completo'}
               value={contactFormData.name}
               onInputChange={(name, value) => {
                 contactFormChange(name, value);
@@ -37,9 +37,9 @@ class Contact extends React.PureComponent {
           <Col xs='12' md='6'>
             <Input
               type={'text'}
-              label={'Email'}
+              label={'Correo electrónico'}
               name={'email'}
-              placeholder={'Your Email Address'}
+              placeholder={'example@gmail.com'}
               value={contactFormData.email}
               onInputChange={(name, value) => {
                 contactFormChange(name, value);
@@ -49,9 +49,9 @@ class Contact extends React.PureComponent {
           <Col xs='12' md='12'>
             <Input
               type={'textarea'}
-              label={'Message'}
+              label={'Mensaje'}
               name={'message'}
-              placeholder={'Please Describe Your Message'}
+              placeholder={'...'}
               value={contactFormData.message}
               onInputChange={(name, value) => {
                 contactFormChange(name, value);
@@ -66,7 +66,7 @@ class Contact extends React.PureComponent {
             type='submit'
             onClick={() => contactUs()}
           >
-            Send
+            Enviar
           </button>
         </div>
       </div>

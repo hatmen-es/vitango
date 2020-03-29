@@ -22,7 +22,7 @@ class NavigationMenu extends React.PureComponent {
     return (
       <div className='navigation-menu'>
         <div className='menu-header'>
-          <h1>MERN Store</h1>
+          <h1>Municipios</h1>
 
           {isMenuOpen && <span className='close-icon' onClick={toggleMenu} />}
         </div>
@@ -31,7 +31,7 @@ class NavigationMenu extends React.PureComponent {
             {categories.map((link, index) => (
               <li key={index} className='menu-item'>
                 <NavLink
-                  to={'/shop/category/' + link.slug}
+                  to={'/brands/category/' + link.slug}
                   activeClassName='active-link'
                   exact
                 >

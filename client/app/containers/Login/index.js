@@ -8,12 +8,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { Row, Col } from 'reactstrap';
-import { Redirect, Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 import actions from '../../actions';
 import Input from '../../components/Input';
 import LoadingIndicator from '../../components/LoadingIndicator';
-import SignupProvider from '../../components/SignupProvider';
 
 class Login extends React.PureComponent {
   render() {
@@ -35,16 +34,16 @@ class Login extends React.PureComponent {
             <div className='popup-background' />
           </div>
         )}
-        <h1>Login</h1>
+        <h1>Entrar</h1>
         <hr />
         <Row>
           <Col xs='12' md='6' className='col-no-padding'>
             <Col xs='12' md='12'>
               <Input
                 type={'text'}
-                label={'Email Address'}
+                label={'Email'}
                 name={'email'}
-                placeholder={'Please Enter Your Email'}
+                placeholder={'Introduce tu email'}
                 value={loginFormData.email}
                 onInputChange={(name, value) => {
                   loginChange(name, value);
@@ -54,9 +53,9 @@ class Login extends React.PureComponent {
             <Col xs='12' md='12'>
               <Input
                 type={'password'}
-                label={'Password'}
+                label={'Contraseña'}
                 name={'password'}
-                placeholder={'Please Enter Your Password'}
+                placeholder={'Introduce tu contraseña'}
                 value={loginFormData.password}
                 onInputChange={(name, value) => {
                   loginChange(name, value);
@@ -64,18 +63,12 @@ class Login extends React.PureComponent {
               />
             </Col>
           </Col>
-          <Col xs='12' md='6'>
-            <SignupProvider />
-          </Col>
         </Row>
         <hr />
         <div className='login-actions'>
           <button className='input-btn' type='submit' onClick={() => login()}>
-            Login
+            Entrar
           </button>
-          <Link className='redirect-link' to={'/forgot-password'}>
-            Forgot Password?
-          </Link>
         </div>
       </div>
     );

@@ -25,7 +25,6 @@ import {
   DropdownItem
 } from 'reactstrap';
 
-import Cart from '../Cart';
 import Menu from '../NavigationMenu';
 
 class Navigation extends React.PureComponent {
@@ -33,11 +32,8 @@ class Navigation extends React.PureComponent {
     const {
       authenticated,
       user,
-      cartItems,
       signOut,
-      isCartOpen,
       isMenuOpen,
-      toggleCart,
       toggleMenu
     } = this.props;
 
@@ -52,7 +48,7 @@ class Navigation extends React.PureComponent {
                 className='text-center info-col d-none d-sm-block'
               >
                 <i className='fa fa-truck' />
-                <span>Free Shipping</span>
+                <span>Sin desplazamientos</span>
               </Col>
               <Col
                 xs='4'
@@ -60,7 +56,7 @@ class Navigation extends React.PureComponent {
                 className='text-center info-col d-none d-sm-block'
               >
                 <i className='fa fa-credit-card' />
-                <span>Payment Methods</span>
+                <span>Sin comisiones</span>
               </Col>
               <Col
                 xs='4'
@@ -68,11 +64,11 @@ class Navigation extends React.PureComponent {
                 className='text-center info-col d-none d-sm-block'
               >
                 <i className='fa fa-phone' />
-                <span>Call us 951-999-9999</span>
+                <span>Contacta en admin@hatmen.es</span>
               </Col>
               <Col xs='12' className='text-center d-block d-sm-none'>
                 <i className='fa fa-phone' />
-                <span> Need advice? Call us 951-999-9999</span>
+                <span> Contacta en admin@hatmen.es</span>
               </Col>
             </Row>
           </Container>
@@ -88,7 +84,7 @@ class Navigation extends React.PureComponent {
               <div className='brand'>
                 <span className='bars-icon fa fa-bars' onClick={toggleMenu} />
                 <Link to='/'>
-                  <h1>MERN Store</h1>
+                  <h1>Tu Comercio</h1>
                 </Link>
               </div>
             </Col>
@@ -101,11 +97,6 @@ class Navigation extends React.PureComponent {
             >
               <div className='header-links'>
                 <span className='bars-icon fa fa-bars' onClick={toggleMenu} />
-                <span className='fa fa-cart-plus' onClick={toggleCart}>
-                  {cartItems.length > 0 && (
-                    <span className='cart-badge'>{cartItems.length}</span>
-                  )}
-                </span>
               </div>
             </Col>
             <Col
@@ -118,19 +109,14 @@ class Navigation extends React.PureComponent {
                 <Nav navbar>
                   <NavItem>
                     <NavLink tag={Link} to='/brands'>
-                      Brands
-                    </NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink tag={Link} to='/shop'>
-                      Shop
+                      Comercios
                     </NavLink>
                   </NavItem>
                   {authenticated ? (
                     <UncontrolledDropdown nav inNavbar>
                       <DropdownToggle nav caret>
                         {Object.keys(user).length == 0
-                          ? 'Welcome'
+                          ? 'Administración'
                           : user.profile.firstName}
                       </DropdownToggle>
                       <DropdownMenu right>
@@ -148,7 +134,7 @@ class Navigation extends React.PureComponent {
                   ) : (
                     <UncontrolledDropdown nav inNavbar>
                       <DropdownToggle nav caret>
-                        Welcome!
+                        Administración
                       </DropdownToggle>
                       <DropdownMenu right>
                         <DropdownItem>
@@ -165,17 +151,6 @@ class Navigation extends React.PureComponent {
             </Col>
           </Row>
         </Container>
-
-        {/* hidden cart drawer */}
-        <div className={isCartOpen ? 'mini-cart-open' : 'hidden-mini-cart'}>
-          <div className='mini-cart'>
-            <Cart />
-          </div>
-          <div
-            className={isCartOpen ? 'dark-overflow' : ''}
-            onClick={toggleCart}
-          />
-        </div>
 
         {/* hidden menu drawer */}
         <div className={isMenuOpen ? 'mini-menu-open' : 'hidden-mini-menu'}>
@@ -195,8 +170,6 @@ class Navigation extends React.PureComponent {
 const mapStateToProps = state => {
   return {
     isMenuOpen: state.navigation.isMenuOpen,
-    isCartOpen: state.navigation.isCartOpen,
-    cartItems: state.cart.cartItems,
     authenticated: state.authentication.authenticated,
     user: state.account.user
   };

@@ -33,7 +33,7 @@ class Brand extends React.PureComponent {
     return (
       <div className='brand'>
         <SubPage
-          title={isBrandAddOpen ? 'Add Brand' : 'Brand List'}
+          title={isBrandAddOpen ? 'Añadir Negocio' : 'Lista de Negocios'}
           isMenuOpen={isBrandAddOpen}
           toggleMenu={toggleAddBrand}
         >

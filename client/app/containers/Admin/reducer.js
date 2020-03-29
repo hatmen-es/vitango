@@ -9,12 +9,11 @@ import { TOGGLE_ADMIN_MENU } from './constants';
 const initialState = {
   isMenuOpen: false,
   adminLinks: [
-    { to: '', name: 'account details' },
-    { to: '/products', name: 'manage products' },
-    { to: '/categories', name: 'manage categories' },
-    { to: '/brands', name: 'manage brands' },
-    { to: '/users', name: 'Manage Users' },
-    { to: '/merchants', name: 'Manage Merchants' }
+    { to: '', name: 'detalles de la cuenta' },
+    { to: '/products', name: 'gestionar productos' },
+    { to: '/categories', name: 'gestionar municipios' },
+    { to: '/brands', name: 'gestionar comercios' },
+    { to: '/users', name: 'gestionar usuarios' }
   ]
 };
 
