@@ -36,7 +36,7 @@ class Account extends React.PureComponent {
         <SubPage title={'Tu Cuenta'} isMenuOpen={null} />
         <div className='info'>
           <p>{user.email}</p>
-          {user.role !== 'ROLE_MEMBER' && <span>Admin</span>}
+          {user.role === 'ROLE_ADMIN' ? <span>Admin</span> : <span>Collaborator</span>}
           {profile.is_subscribed && <span>Subscribed</span>}
         </div>
         <AccountDetails

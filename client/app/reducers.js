@@ -18,6 +18,7 @@ import authenticationReducer from './containers/Authentication/reducer';
 import newsletterReducer from './containers/Newsletter/reducer';
 import customerReducer from './containers/Customer/reducer';
 import adminReducer from './containers/Admin/reducer';
+import collaboratorReducer from './containers/Collaborator/reducer';
 import accountReducer from './containers/Account/reducer';
 import usersReducer from './containers/Users/reducer';
 import productReducer from './containers/Product/reducer';
@@ -39,6 +40,7 @@ const createReducer = history =>
     newsletter: newsletterReducer,
     customer: customerReducer,
     admin: adminReducer,
+    collaborator: collaboratorReducer,
     account: accountReducer,
     users: usersReducer,
     product: productReducer,
