@@ -11,10 +11,9 @@ const initialState = {
   adminLinks: [
     { to: '', name: 'detalles de la cuenta' },
     { to: '/products', name: 'gestionar productos' },
-    { to: '/categories', name: 'gestionar categorias' },
+    { to: '/categories', name: 'gestionar municipios' },
     { to: '/brands', name: 'gestionar comercios' },
-    { to: '/users', name: 'gestionar usuarios' },
-    { to: '/merchants', name: 'gertionar comerciantes' }
+    { to: '/users', name: 'gestionar usuarios' }
   ]
 };
 
