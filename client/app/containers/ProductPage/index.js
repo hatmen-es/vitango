@@ -35,7 +35,6 @@ class ProductPage extends React.PureComponent {
     const {
       product,
       productFormData,
-      itemsInCart,
       productChange,
       handleAddToCart,
       handleRemoveFromCart
@@ -74,25 +73,14 @@ class ProductPage extends React.PureComponent {
                   }}
                 />
                 <div className="item-actions">
-                  {itemsInCart.includes(product._id) ? (
-                    <button
-                      disabled={!product.quantity > 0}
-                      className="input-btn"
-                      type="submit"
-                      onClick={() => handleRemoveFromCart(product)}
-                    >
-                      Remove To Cart
-                    </button>
-                  ) : (
-                    <button
-                      disabled={!product.quantity > 0}
-                      className="input-btn"
-                      type="submit"
-                      onClick={() => handleAddToCart(product)}
-                    >
-                      Add To Cart
-                    </button>
-                  )}
+                <button
+                  disabled={!product.quantity > 0}
+                  className="input-btn"
+                  type="submit"
+                  onClick={() => handleAddToCart(product)}
+                >
+                  Comprar
+                </button>
                 </div>
               </div>
             </div>
@@ -106,8 +94,7 @@ class ProductPage extends React.PureComponent {
 const mapStateToProps = state => {
   return {
     product: state.product.product,
-    productFormData: state.product.productFormData,
-    itemsInCart: state.cart.itemsInCart
+    productFormData: state.product.productFormData
   };
 };
 
