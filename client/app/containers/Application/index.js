@@ -21,8 +21,6 @@ import Dashboard from '../Dashboard';
 import Navigation from '../Navigation';
 import Authentication from '../Authentication';
 import Notification from '../Notification';
-import ForgotPassword from '../ForgotPassword';
-import ResetPassword from '../ResetPassword';
 import Shop from '../Shop';
 import BrandPage from '../BrandPage';
 import ProductPage from '../ProductPage';
@@ -57,11 +55,6 @@ class Application extends React.PureComponent {
                 <Route path='/product/:slug' component={ProductPage} />
                 <Route path='/login' component={LoginPage} />
                 <Route path='/register' component={SignupPage} />
-                <Route path='/forgot-password' component={ForgotPassword} />
-                <Route
-                  path='/reset-password/:token'
-                  component={ResetPassword}
-                />
                 <Route
                   path='/dashboard'
                   component={Authentication(Dashboard)}
