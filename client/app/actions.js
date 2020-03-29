@@ -20,7 +20,6 @@ import * as product from './containers/Product/actions';
 import * as category from './containers/Category/actions';
 import * as brand from './containers/Brand/actions';
 import * as menu from './containers/NavigationMenu/actions';
-import * as merchant from './containers/Merchant/actions';
 import * as contact from './containers/Contact/actions';
 
 export default function mapDispatchToProps(dispatch) {
@@ -40,7 +39,6 @@ export default function mapDispatchToProps(dispatch) {
       ...category,
       ...brand,
       ...menu,
-      ...merchant,
       ...contact
     },
     dispatch

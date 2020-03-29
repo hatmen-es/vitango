@@ -24,7 +24,6 @@ import productReducer from './containers/Product/reducer';
 import categoryReducer from './containers/Category/reducer';
 import brandReducer from './containers/Brand/reducer';
 import navigationMenuReducer from './containers/NavigationMenu/reducer';
-import merchantReducer from './containers/Merchant/reducer';
 import contactReducer from './containers/Contact/reducer';
 
 const createReducer = history =>
@@ -46,7 +45,6 @@ const createReducer = history =>
     category: categoryReducer,
     brand: brandReducer,
     menu: navigationMenuReducer,
-    merchant: merchantReducer,
     contact: contactReducer
   });
 
