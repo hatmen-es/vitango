@@ -118,7 +118,7 @@ class Navigation extends React.PureComponent {
                 <Nav navbar>
                   <NavItem>
                     <NavLink tag={Link} to='/brands'>
-                      Brands
+                      Comercios
                     </NavLink>
                   </NavItem>
                   <NavItem>
