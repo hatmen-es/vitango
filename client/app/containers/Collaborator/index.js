@@ -21,7 +21,7 @@ import Brand from '../Brand';
 
 class Collaborator extends React.PureComponent {
   render() {
-    const { isMenuOpen, collaboratorLinks, toggleAdminMenu } = this.props;
+    const { isMenuOpen, collaboratorLinks, toggleCollaboratorMenu } = this.props;
 
     return (
       <div className='admin'>
@@ -30,7 +30,7 @@ class Collaborator extends React.PureComponent {
             <AccountMenu
               isMenuOpen={isMenuOpen}
               accountLinks={collaboratorLinks}
-              toggleMenu={toggleAdminMenu}
+              toggleMenu={toggleCollaboratorMenu}
             />
           </Col>
           <Col xs='12' md='8'>
