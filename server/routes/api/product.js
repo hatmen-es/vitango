@@ -3,9 +3,9 @@ const router = express.Router();
 const passport = require('passport');
 
 // Bring in Models & Helpers
-const Product = require('../../models/product');
-const Brand = require('../../models/brand');
-const Category = require('../../models/category');
+const Product = require('../../models/gift-card');
+const Brand = require('../../models/commerce');
+const Category = require('../../models/city');
 
 router.post(
   '/add',
