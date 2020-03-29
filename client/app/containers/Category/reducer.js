@@ -28,12 +28,12 @@ const initialState = {
     },
     {
       dataField: 'name',
-      text: 'Category Name',
+      text: 'Nombre',
       sort: true
     },
     {
       dataField: 'description',
-      text: 'Category Description',
+      text: 'Ubicación',
       classes: 'desc-column'
     }
   ]

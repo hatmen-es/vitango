@@ -27,9 +27,9 @@ const AddCategory = props => {
         <Col xs='12' md='6'>
           <Input
             type={'text'}
-            label={'Name'}
+            label={'Nombre'}
             name={'name'}
-            placeholder={'Category Name'}
+            placeholder={'Nombre'}
             value={categoryFormData.name}
             onInputChange={(name, value) => {
               categoryChange(name, value);
@@ -39,9 +39,9 @@ const AddCategory = props => {
         <Col xs='12' md='12'>
           <Input
             type={'textarea'}
-            label={'Description'}
+            label={'Localización'}
             name={'description'}
-            placeholder={'Category Description'}
+            placeholder={'Nombre y provincia'}
             value={categoryFormData.description}
             onInputChange={(name, value) => {
               categoryChange(name, value);
@@ -50,7 +50,7 @@ const AddCategory = props => {
         </Col>
         <Col xs='12' md='12'>
           <SelectOption
-            label={'Select Products'}
+            label={'Selecciona negocios'}
             multi={true}
             options={products}
             value={selectedProducts}
@@ -67,7 +67,7 @@ const AddCategory = props => {
           type='submit'
           onClick={() => addCategory()}
         >
-          Add Category
+          Añadir Municipio
         </button>
       </div>
     </div>
