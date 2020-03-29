@@ -13,7 +13,7 @@ const initialState = {
     { to: '/products', name: 'gestionar productos' },
     { to: '/categories', name: 'gestionar categorias' },
     { to: '/brands', name: 'gestionar comercios' },
-    { to: '/users', name: 'gestrionar usuarios' },
+    { to: '/users', name: 'gestionar usuarios' },
     { to: '/merchants', name: 'gertionar comerciantes' }
   ]
 };
