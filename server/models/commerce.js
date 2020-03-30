@@ -68,11 +68,17 @@ const CommerceSchema = new Schema({
     max: 50,
     required: true,
   },
+  deleted: {
+    type: Boolean,
+    default: false,
+  },
 }, {
   timestamps: {
     createdAt: "created",
     updatedAt: "updated",
   }
 });
+
+CommerceSchema.index({ name: 'text' });
 
 module.exports = Mongoose.model('Commerce', CommerceSchema);
