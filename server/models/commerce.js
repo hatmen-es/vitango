@@ -36,6 +36,7 @@ const CommerceSchema = new Schema({
   phoneNumber: {
     type: String,
     trim: true,
+    required: true,
     validate: {
       validator: phone => {
         const parsedNumber = PhoneNumber(phone);
@@ -55,6 +56,7 @@ const CommerceSchema = new Schema({
   bankAccount: {
     type: String,
     trim: true,
+    required: true,
     validate: {
       validator: IBAN.isValid,
       message: props => `${props.value} is not a valid IBAN!`
@@ -64,6 +66,7 @@ const CommerceSchema = new Schema({
     type: Number,
     min: 0,
     max: 50,
+    required: true,
   },
 }, {
   timestamps: {
