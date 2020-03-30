@@ -41,4 +41,6 @@ const CitySchema = new Schema({
   }
 });
 
+CitySchema.index({ name: 'text' });
+
 module.exports = Mongoose.model('City', CitySchema);

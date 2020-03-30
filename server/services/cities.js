@@ -32,9 +32,9 @@ exports.deleteCity = async (cityId) => {
   return true;
 };
 
-exports.getCityByName = async (name) => {
-  const city = await City.findOne({ name });
-  return createResult(city);
+exports.getCitiesByName = async (textQuery) => {
+  const cities = await City.find({ $text: { $search: textQuery }, deleted: false });
+  return cities ? cities.map(createResult) : []
 };
 
 exports.getCityById = async (cityId) => {
@@ -45,5 +45,4 @@ exports.getCityById = async (cityId) => {
 exports.getAllCities = async () => {
   const cities = await City.find({ deleted: false });
   return cities ? cities.map(createResult) : []
-
 };

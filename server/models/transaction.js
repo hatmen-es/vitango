@@ -57,6 +57,10 @@ const TransactionSchema = new Schema({
     type: Boolean,
     default: false,
   },
+  deleted: {
+    type: Boolean,
+    default: false,
+  },
 }, {
   timestamps: {
     createdAt: "created",

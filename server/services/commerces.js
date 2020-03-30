@@ -51,3 +51,9 @@ exports.getCommercesByCity = async (cityId) => {
   const items = await Commerce.find({ city: cityId, deleted: false });
   return items || [];
 };
+
+exports.getCommerces = async ({ query, select, cursor }) => {
+  const newQuery = { ...query, deleted: false };
+  const items = await Commerce.find(newQuery, select, cursor);
+  return items || [];
+};

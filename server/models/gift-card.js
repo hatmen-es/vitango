@@ -11,27 +11,33 @@ const options = {
 Mongoose.plugin(slug, options);
 
 const GiftCardSchema = new Schema({
-  description: {
+  hash: {
     type: String,
-    trim: true
+    trim: true,
+    unique: true,
+    required: true,
   },
   quantity: {
     type: Number,
     required: true,
+    min: 0,
   },
-  price: {
-    type: Number
-  },
-  commerce: {
+  transaction: {
     type: Schema.Types.ObjectId,
-    ref: 'Commerce'
+    ref: 'Transaction',
+    required: true,
   },
-  used: {
+  isConsumed: {
     type: Boolean,
+    default: false,
   },
-  user: {
-    type: Schema.Types.ObjectId,
-    ref: "User"
+  deleted: {
+    type: Boolean,
+    default: false,
+  },
+},{
+  timestamps: {
+    createdAt: "created",
   }
 });
 
