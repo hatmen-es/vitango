@@ -10,39 +10,37 @@ const options = {
 
 Mongoose.plugin(slug, options);
 
-// Product Schema
-const ProductSchema = new Schema({
-  sku: {
-    type: String
+// Category Schema
+const CitySchema = new Schema({
+  _id: {
+    type: Schema.ObjectId,
+    auto: true
   },
   name: {
     type: String,
     trim: true
   },
   slug: { type: String, slug: 'name', unique: true },
-  image: {
-    data: Buffer,
-    contentType: String
-  },
   description: {
     type: String,
     trim: true
   },
-  quantity: {
-    type: Number
+  deleted: {
+    type: Boolean,
+    default: false,
   },
-  price: {
-    type: Number
-  },
-  brand: {
+  admin: {
     type: Schema.Types.ObjectId,
-    ref: 'Brand'
-  },
-  updated: Date,
-  created: {
-    type: Date,
-    default: Date.now
+    ref: "User",
+    required: true,
+  }
+}, {
+  timestamps: {
+    createdAt: "created",
+    updatedAt: "updated",
   }
 });
 
-module.exports = Mongoose.model('Product', ProductSchema);
+CitySchema.index({ name: 'text' });
+
+module.exports = Mongoose.model('City', CitySchema);

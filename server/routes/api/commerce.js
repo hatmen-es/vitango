@@ -3,7 +3,11 @@ const router = express.Router();
 const passport = require('passport');
 
 // Bring in Models & Helpers
-const Brand = require('../../models/brand');
+const Commerce = require('../../models/commerce');
+const { isAdmin } = require("../middlewares/auth");
+const { postCommerce } = require("../../controllers/commerces");
+
+router.post("/", passport.authenticate('jwt', { session: false }), isAdmin, postCommerce);
 
 router.post(
   '/add',
@@ -18,7 +22,7 @@ router.post(
         .json({ error: 'You must enter description & name.' });
     }
 
-    const brand = new Brand({
+    const brand = new Commerce({
       name,
       description
     });
@@ -41,7 +45,7 @@ router.post(
 
 // fetch all brands api
 router.get('/list', (req, res) => {
-  Brand.find({}, (err, data) => {
+  Commerce.find({}, (err, data) => {
     if (err) {
       return res.status(422).json({
         error: 'Your request could not be processed. Please try again.'
@@ -57,7 +61,7 @@ router.get(
   '/list/select',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    Brand.find({}, 'name', (err, data) => {
+    Commerce.find({}, 'name', (err, data) => {
       if (err) {
         return res.status(422).json({
           error: 'Your request could not be processed. Please try again.'
@@ -75,7 +79,7 @@ router.delete(
   '/delete/:id',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    Brand.deleteOne({ _id: req.params.id }, (err, data) => {
+    Commerce.deleteOne({ _id: req.params.id }, (err, data) => {
       if (err) {
         return res.status(422).json({
           error: 'Your request could not be processed. Please try again.'
